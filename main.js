@@ -5,6 +5,9 @@ hamburger.addEventListener('click', () => {
     navUl.classList.toggle('show');
 });
 
+
+
+
 function toggleDarkMode() {
     let bodyElement = document.getElementById('main-background');
     let darkModeButtonElement = document.getElementById('darkMode');
