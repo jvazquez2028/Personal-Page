@@ -1,60 +1,126 @@
-body {
+*{
+    box-sizing: border-box;
+  }
+ body {
     background-color:rgb(255, 255, 254);
     font-family: 'Roboto', sans-serif;
     margin-bottom: 150px;
+    position: relative;
+    
 }
 
-li {
-    list-style: none;
-    display: inline-block;
-    margin: 0 20px;
+header {
+    position: fixed;
+    margin: 0px auto;
+    width: 100%;
+    top: 0;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    background-color: white;
+   
 }
+
+nav {
+    flex-wrap: wrap;
+}
+
+#nav-ul {
+    list-style: none;
+    display: flex;
+    flex-direction: row;    
+    justify-content: space-evenly;
+    margin: 0; /* scaling */
+    padding-top: 10px; /* scaling */
+    overflow: hidden;
+    width: 100%;
+    border: 1px solid #ffa87b;
+}
+
+.hamburger {
+    background-color: transparent;
+    border: 0;
+    color: mediumpurple;
+    cursor: pointer;
+    font-size: 20px;
+    display: none;
+}
+
+.hamburger:focus {
+    outline: none;
+}
+
+button.hamburger:hover {
+    border: none;
+    background-color: transparent;
+    color: #5c3e84;
+    transition: ease-in-out;
+    cursor: pointer;
+
+
+ }
 
 button#darkMode {
-    padding: 10px 20px;
-    margin-left: 800px;
+    padding: 8px 16px;
+    margin-top: -20px;
 }
 
 a {
     text-decoration: none;
 }
 
-h1 {
+.page-titles {
     font-size: 80px;
     text-align: center;
     font-weight: lighter;
+    margin-top: 50px;
+    padding-top: 20px;
     
 }
 p {
     display: block;
     text-align: center;
-    margin: 5px 150px ;
+    margin: 0 auto;
+    max-width: 1000px;
     padding-top: 5px;
     font-size: 20px;
     font-weight: lighter;
 }
 
-#intro {
-    overflow: auto;
-}
 
-#titles {
-    float: left;
-    padding-top: 100px;
-    padding-left: 200px;
-}
+
+
 img {
     border: 2px solid #686ee2;
     border-radius: 2%;
     
 }
-
-#intro-image {
-    margin: 0 300px 0 auto;
-    max-width: 250px;
-    border-radius: 2%;
-    float: right;
+section.greeting h2{
+    text-align: center;
+    font-size: 40px;
 }
+
+#intro {
+    height: 375px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.greeting {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.greeting img {
+   width: 250px;
+   clip-path:circle(40%);
+   border-radius: 100%;
+   overflow: hidden;
+  
+}
+
 
 #about-me-para {
     display: block;
@@ -66,9 +132,27 @@ img {
     font-weight: lighter;
 }
 
+section#about {
+    margin: 10px 0;
+    padding-top: 40px;
+}
+
+section#projects {
+    padding-top: 5px;
+    margin: 15px 0;
+
+}
+
+section#contact {
+    padding: 30px 0 200px 0;
+    height: 500px
+}
+
 #contact-links-section {
-    display:flex;
+    display: flex;
     justify-content: center;
+    max-width: 700px;
+    margin: 20px auto;
 }
 
 .contact-links {
@@ -82,6 +166,7 @@ img {
     text-align: center;
     color: mediumpurple;
     font-size: 35px;
+    margin-top: 10px;
 }
 
 h3 {
@@ -95,17 +180,30 @@ h3 {
      font-size: 20px;
  }
 
- #projects-pictures {
-     margin: 30px 0 30px 0;
-     display: flex;
-     justify-content: space-evenly;
+ section.project-demo {
+    float: left;
+    width: 33%;
+    max-width: 400px;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    
  }
 
- #project-links {
-     display: flex;
-     justify-content: space-around;
-
+ .projects-pictures, section a {
+     margin: 0 auto;
+     max-width: 300px;
  }
+
+section.project-displays {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    height: 300px;
+}
+section a {
+    color: white;
+}
 
 button {
     border: 2px solid #f35c6e;
@@ -125,15 +223,350 @@ button {
 
 
  }
- @media (min-width: 500px) {
-     img {
-         
+
+
+
+
+ 
+/* media queries */
+
+@media screen and (max-width: 600px) {
+
+    header {
+        position: fixed;
+        margin: 0px auto;
+        width:max-content;
+        top: 0;
+        box-shadow: none;
+        background-color:transparent ;
+       
+    }
+     #nav-ul {
+         display: none;
      }
+
+     #nav-ul.show {
+         display: flex;
+         flex-direction: column;
+         background-color: transparent;
+         height: 150px;
+         margin-top: 40px;
+         border-color: transparent;
+     }
+
+     .hamburger {
+         display: block;
+         position: fixed;
+     }
+
+
+
+     nav {
+         position: fixed;
+         margin: 0; /* scaling */
+        padding-top: 0; /* scaling */
+        padding-left: 30px;
+        width: 100%;
+        border: 1px solid #ffa87b;
+        background-color: transparent;
+
+     }
+     
+     button#darkMode {
+         display: none;
+     }
+
+     section.greeting h2{
+        text-align: center;
+        font-size: 25px;
+    }
+
+    .page-titles {
+        font-size: 40px;
+        text-align: center;
+        font-weight: lighter;
+        margin: 50px auto 0px auto;
+        
+        padding-top: 20px;
+        width: 100%;
+        
+    }
+
+    .subheadings {
+        text-align: center;
+        color: mediumpurple;
+        font-size: 25px;
+        margin-top: 5px;
+        max-width: 500px;
+    }
+    
+    #intro {
+        height: 400px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    h2#titles.subheadings {
+        margin-bottom: 5px;
+    }
+    
+    .greeting img {
+       width: 170px;
+       clip-path:circle(40%);
+       border-radius: 100%;
+       overflow: hidden;
+      
+    }
+    
+    section.project-demo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        max-width: max-content;
+        margin: 40px auto 5px auto;
+    
+
+     }
+
+     section.project-displays {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 10px auto 5px auto;
+        height: 1000px;
+        max-width: 400px;
+     }
+     .projects-pictures, section a {
+        margin: 5px auto;
+        max-width: 300px;
+    }
+
+    section#contact {
+        margin-top: 50px;
+        padding-top: 50px;
+        height: 500px;
+    }
+    #about-me-para, p {
+        text-align: left;
+        max-width:max-content;
+        margin: 0 10px;
+        padding-top: 20px;
+    }
+
+    h3, h4 {
+        padding-left: 0;
+        margin: 10px auto;
+        text-align: center;
+    }
+ 
+}
+    
+
+ @media (min-width:600px) and (max-width: 900px) {
+
+    header {
+        position: fixed;
+        margin: 0px auto;
+        width: max-content;
+        top: 0;
+        box-shadow: none;
+        background-color:transparent ;
+       
+    }
+     #nav-ul {
+         display: none;
+     }
+
+     #nav-ul.show {
+         display: flex;
+         flex-direction: column;
+         width: max-content;
+         background-color: transparent;
+         height: 150px;
+         margin-top: 40px;
+         border-color: transparent;
+     }
+
+     .hamburger {
+         display: block;
+         position: fixed;
+         background-color: whites;
+     }
+
+
+
+     nav {
+         position: fixed;
+         margin: 0; /* scaling */
+        padding-top: 0; /* scaling */
+        padding-left: 30px;
+        width: 100%;
+        border: 1px solid #ffa87b;
+        background-color: transparent;
+
+     }
+     
+     button#darkMode {
+         display: none;
+     }
+
+     section.greeting h2{
+        text-align: center;
+        font-size: 40px;
+    }
+    
+    #intro {
+        height: 500px;
+        min-width: 700px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 50%;
+        margin: 0 auto;
+    }
+
+    h2#titles.subheadings {
+        margin-bottom: 5px;
+    }
+    
+    .greeting img {
+       width: 250px;
+       clip-path:circle(40%);
+       border-radius: 100%;
+       overflow: hidden;
+      
+    }
+    
+    section.project-demo {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        min-width: 500px;
+        margin: 40px auto 5px auto;
+    
+
+     }
+
+     section.project-displays {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin: 70px auto 5px auto;
+        height: 1000px;
+        max-width: 1000px;
+     }
+     .projects-pictures, section a {
+        margin: 5px auto;
+        max-width: 400px;
+    }
+
+    section#contact {
+        margin-top: 100px;
+        padding-top: 100px;
+        height: 700px;
+    }
+ 
+    #about-me-para, p {
+        max-width: 600px;
+        margin: 0 auto;
+        padding-top: 20px;
+    }
+
+    h3, h4 {
+        padding-left: 0;
+        margin: 10px auto;
+        text-align: center;
+    }
  }
 
- @media (min-width: 300px) and (max-width:500px) {
-     h1 {
-         font-size: 20px;
-         border: 10px solid red;
+ @media (min-width:900px) and (max-width: 1000px) {
+     
+    section#intro {
+        display: flex;
+        flex-direction: column;
+        height: 375px;
+    
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    h2#titles.subheadings {
+        margin-bottom: 10px;
+    }
+    section.greeting h2{
+        display: block;
+        text-align: center;
+        font-size: 40px;
+    }
+    
+    .greeting img {
+       width: 200px;
+       overflow: hidden;
+
+
+    }
+    section.project-demo {
+        width: 100%;
+        min-width: 1000px;
+        margin: 40px auto 5px auto;
+
      }
+
+     section.project-displays {
+        display: block;
+        margin: 0 auto;
+        height: 1000px;
+        max-width: 1000px;
+     }
+     .projects-pictures, section a {
+        margin: 5px auto;
+        max-width: 400px;
+    }
+
+    section#contact {
+        margin-top: 200px;
+        margin-bottom: 500px;
+    }
+    h3, h4 {
+        padding-left: 0;
+        margin: 0 auto;
+        text-align: center;
+    }
+
  }
+
+ @media (min-width: 800px) and (max-width: 1500px) {
+    #about-me-para, p {
+        max-width: 700px;
+        margin: 0 auto;
+        padding-top: 00px;
+    }
+    h3, h4 {
+        padding-left: 0;
+        margin: 10px auto;
+        text-align: center;
+    }
+
+
+ }
+
+ @media (min-width: 1500px) and (max-width: 3000px) {
+     #about-me-para, p  {
+         max-width: 1000px;
+         margin: 0 auto;
+         padding-top: 0px;
+         padding-bottom: 0;
+     }
+
+     h3, h4 {
+        padding-left: 0;
+        margin: 0 auto;
+        text-align: center;
+     }
+
+    }
